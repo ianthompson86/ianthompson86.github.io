@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
 html {
     /* Setting a base font size of 10px give us easier rem calculations
         Info: 1rem === 12px, 1.5rem === 18px, 2rem === 24px and so forth
         */
     font-size: 24px;
-    font-family: Verdana;
+    font-family: 'Cabin', sans-serif;
     color: #353755;
     background-color: white;
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 18px;
+    }
 }
 
 a {
@@ -15,7 +23,7 @@ a {
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     position: absolute; 
     margin: 0;
@@ -44,14 +52,21 @@ body::after {
 
 #contentBox {
     background-color: white;
-    height: 60vh;
+    min-height: 60vh;
     width: 60vw;
-    padding: 3%;
-    border-radius: 5vmin;
+    padding: 3vmin;
+    border-radius: 3vmin;
+    margin: 3vmin;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (max-width: 600px) {
+    #contentBox {
+      width: 90vw;
+    }
 }
 
 .profilePicBox {
@@ -69,22 +84,19 @@ body::after {
     border-radius: 50%;
 }
 
+@media (max-width: 600px) {
+    .profilePic {
+        max-height: 150px;
+    }
+}
+
 .iconsBox {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
-
-.socialMediaButton {
-    cursor: pointer;
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    background-color: #55acee;
-    border: 1px solid white;
-    border-radius: 2px;
+    margin: 3vmin;
 }
 
 /* Style all font awesome icons */
@@ -96,6 +108,14 @@ body::after {
     text-decoration: none;
     border-radius: 50%;
     margin: 5px;
+}
+
+@media (max-width: 600px) {
+    .fa {
+        padding: 10px;
+        font-size: 16px;
+        width: 16px;
+    }
 }
 
 /* Add a hover effect if you want */
